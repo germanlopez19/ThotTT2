@@ -17,9 +17,6 @@ namespace TT2Thot.Models
 
         public int TestID { get; set; }
 
-        [StringLength(128)]
-        public string UsuarioID { get; set; }
-
         public int? TemaID { get; set; }
 
         [Column(TypeName = "timestamp")]

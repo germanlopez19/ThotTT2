@@ -54,10 +54,6 @@ namespace TT2Thot.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<Test>()
-                .Property(e => e.UsuarioID)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Test>()
                 .Property(e => e.FecharRealizacion)
                 .IsFixedLength();
 
@@ -66,13 +62,7 @@ namespace TT2Thot.Models
             modelBuilder.Entity<IdentityRole>().HasKey<string>(r => r.Id);
             modelBuilder.Entity<IdentityUserRole>().HasKey(r => new { r.RoleId, r.UserId });
 
-            //modelBuilder.Entity<Tema>()
-            //    .HasRequired(n => n.ApplicationUser)
-            //    .WithMany(a => a.Tema)
-            //    .HasForeignKey(n => n.ApplicationUserId)
-            //    .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Unidad>()
+           modelBuilder.Entity<Unidad>()
                 .Property(e => e.Numero)
                 .IsUnicode(false);
 

@@ -15,7 +15,7 @@ namespace TT2Thot.Models
         public string ApellidoMaterno { get; set; }
         public string NumeroBoleta { get; set; }
 
-        public virtual ICollection<Tema> Temas { get; set; }
+        public virtual ICollection<Test> Tests { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
