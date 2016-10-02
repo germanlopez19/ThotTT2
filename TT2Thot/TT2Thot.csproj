@@ -200,9 +200,12 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\TemasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610020856342_Users.cs" />
+    <Compile Include="Migrations\201610020856342_Users.Designer.cs">
+      <DependentUpon>201610020856342_Users.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -286,6 +289,11 @@
     <Content Include="Views\Temas\Details.cshtml" />
     <Content Include="Views\Temas\Edit.cshtml" />
     <Content Include="Views\Temas\Index.cshtml" />
+    <Content Include="Views\Areas\Create.cshtml" />
+    <Content Include="Views\Areas\Delete.cshtml" />
+    <Content Include="Views\Areas\Details.cshtml" />
+    <Content Include="Views\Areas\Edit.cshtml" />
+    <Content Include="Views\Areas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -297,6 +305,11 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201610020856342_Users.resx">
+      <DependentUpon>201610020856342_Users.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

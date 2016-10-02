@@ -5,6 +5,7 @@ namespace TT2Thot.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
     using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
     public partial class ThotDBContext : DbContext
     {
         public ThotDBContext()
@@ -59,6 +60,11 @@ namespace TT2Thot.Models
             modelBuilder.Entity<Test>()
                 .Property(e => e.FecharRealizacion)
                 .IsFixedLength();
+
+            
+            modelBuilder.Entity<IdentityUserLogin>().HasKey<string>(l => l.UserId);
+            modelBuilder.Entity<IdentityRole>().HasKey<string>(r => r.Id);
+            modelBuilder.Entity<IdentityUserRole>().HasKey(r => new { r.RoleId, r.UserId });
 
             //modelBuilder.Entity<Tema>()
             //    .HasRequired(n => n.ApplicationUser)

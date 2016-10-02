@@ -80,3 +80,5 @@ c:\users\german\documents\visual studio 2015\Projects\TT2Thot\TT2Thot\bin\Micros
 c:\users\german\documents\visual studio 2015\Projects\TT2Thot\TT2Thot\obj\Debug\TT2Thot.csprojResolveAssemblyReference.cache
 c:\users\german\documents\visual studio 2015\Projects\TT2Thot\TT2Thot\obj\Debug\TT2Thot.dll
 c:\users\german\documents\visual studio 2015\Projects\TT2Thot\TT2Thot\obj\Debug\TT2Thot.pdb
+C:\Users\German\Documents\Visual Studio 2015\Projects\TT2Thot\TT2Thot\obj\Debug\TT2Thot.Migrations.Users.resources
+C:\Users\German\Documents\Visual Studio 2015\Projects\TT2Thot\TT2Thot\obj\Debug\TT2Thot.csproj.GenerateResource.Cache
