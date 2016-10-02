@@ -151,7 +151,8 @@ namespace TT2Thot.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Nombre = model.Nombre,
+                    ApellidoPaterno = model.ApellidoPaterno, ApellidoMaterno = model.ApellidoMaterno, NumeroBoleta = model.NumeroBoleta};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

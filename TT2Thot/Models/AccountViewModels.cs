@@ -65,6 +65,26 @@ namespace TT2Thot.Models
     public class RegisterViewModel
     {
         [Required]
+        [StringLength(45)]
+        [Display(Name = "Nombre")]
+        public string Nombre { get; set; }
+
+        [Required]
+        [StringLength(45)]
+        [Display(Name = "Apellido Paterno")]
+        public string ApellidoPaterno { get; set; }
+
+        [Required]
+        [StringLength(45)]
+        [Display(Name = "Apellido Materno")]
+        public string ApellidoMaterno { get; set; }
+
+        [Required]
+        [StringLength(10)]
+        [Display(Name = "Número de Boleta")]
+        public string NumeroBoleta { get; set; }
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Correo electrónico")]
         public string Email { get; set; }
