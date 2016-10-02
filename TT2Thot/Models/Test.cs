@@ -34,6 +34,9 @@ namespace TT2Thot.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Pregunta> Preguntas { get; set; }
 
+        public virtual ApplicationUser ApplicationUser { get; set; }
+
+
         public virtual Tema Tema { get; set; }
     }
 }

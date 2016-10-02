@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Collections.Generic;
 
 namespace TT2Thot.Models
 {
@@ -13,6 +14,8 @@ namespace TT2Thot.Models
         public string ApellidoPaterno { get; set; }
         public string ApellidoMaterno { get; set; }
         public string NumeroBoleta { get; set; }
+
+        public virtual ICollection<Tema> Temas { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
