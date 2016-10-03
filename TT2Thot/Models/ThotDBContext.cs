@@ -6,7 +6,8 @@ namespace TT2Thot.Models
     using System.Linq;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
-    public partial class ThotDBContext : DbContext
+
+       public partial class ThotDBContext : DbContext
     {
         public ThotDBContext()
             : base("name=ThotContext")
@@ -62,7 +63,13 @@ namespace TT2Thot.Models
             modelBuilder.Entity<IdentityRole>().HasKey<string>(r => r.Id);
             modelBuilder.Entity<IdentityUserRole>().HasKey(r => new { r.RoleId, r.UserId });
 
-           modelBuilder.Entity<Unidad>()
+            modelBuilder.Entity<Test>()
+                .HasRequired(n => n.ApplicationUser)
+                .WithMany(a => a.Tests)
+                //.HasForeignKey(n => n.ApplicationUserId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Unidad>()
                 .Property(e => e.Numero)
                 .IsUnicode(false);
 

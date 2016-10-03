@@ -28,14 +28,22 @@ namespace TT2Thot.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        private string v;
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+        }
+
+        public ApplicationDbContext(string v)
+        {
+            this.v = v;
         }
 
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
+        //public virtual DbSet<Test> Tests { get; set; }
     }
 }
