@@ -41,7 +41,7 @@
             @Html.DisplayFor(modelItem => item.Nombre)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Contenido)
+            @Html.ActionLink("Contenido", "Details", new { id = item.TemaID }) |
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Bibliografia)

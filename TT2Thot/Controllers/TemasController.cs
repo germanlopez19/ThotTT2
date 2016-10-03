@@ -38,7 +38,7 @@ namespace TT2Thot.Controllers
         }
 
         // GET: Temas/Create
-        [Authorize (Users = "german.lopez19@ymail")]
+        [Authorize (Users = "german.lopez19@ymail.com")]
         public ActionResult Create()
         {
             ViewBag.UnidadID = new SelectList(db.Unidads, "UnidadID", "Numero");
@@ -50,6 +50,7 @@ namespace TT2Thot.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public ActionResult Create([Bind(Include = "TemaID,Numero,Nombre,UnidadID,Contenido,Bibliografia")] Tema tema)
         {
             if (ModelState.IsValid)
@@ -64,7 +65,7 @@ namespace TT2Thot.Controllers
         }
 
         // GET: Temas/Edit/5
-        [Authorize(Users = "german.lopez19@ymail")]
+        [Authorize(Users = "german.lopez19@ymail.com")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -98,7 +99,7 @@ namespace TT2Thot.Controllers
         }
 
         // GET: Temas/Delete/5
-        [Authorize(Users = "german.lopez19@ymail")]
+        [Authorize(Users = "german.lopez19@ymail.com")]
         public ActionResult Delete(int? id)
         {
             if (id == null)

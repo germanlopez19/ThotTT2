@@ -82,3 +82,5 @@ C:\Users\German\Documents\Visual Studio 2015\Projects\TT2Thot\TT2Thot\obj\Debug\
 C:\Users\German\Documents\Visual Studio 2015\Projects\TT2Thot\TT2Thot\obj\Debug\TT2Thot.csproj.GenerateResource.Cache
 C:\Users\German\Documents\Visual Studio 2015\Projects\TT2Thot\TT2Thot\obj\Debug\TT2Thot.dll
 C:\Users\German\Documents\Visual Studio 2015\Projects\TT2Thot\TT2Thot\obj\Debug\TT2Thot.pdb
+C:\Users\German\Documents\Visual Studio 2015\Projects\TT2Thot\TT2Thot\bin\CKFinder.dll
+C:\Users\German\Documents\Visual Studio 2015\Projects\TT2Thot\TT2Thot\bin\CKFinder.pdb

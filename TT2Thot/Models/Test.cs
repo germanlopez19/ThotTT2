@@ -1,4 +1,4 @@
-namespace TT2Thot.Models
+﻿namespace TT2Thot.Models
 {
     using System;
     using System.Collections.Generic;
@@ -32,7 +32,7 @@ namespace TT2Thot.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Pregunta> Preguntas { get; set; }
-        
+
         public virtual Tema Tema { get; set; }
     }
 }
