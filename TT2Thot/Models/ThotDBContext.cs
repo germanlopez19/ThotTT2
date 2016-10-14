@@ -77,5 +77,7 @@ namespace TT2Thot.Models
                 .Property(e => e.Nombre)
                 .IsUnicode(false);
         }
+
+        public System.Data.Entity.DbSet<TT2Thot.Models.ApplicationUser> ApplicationUsers { get; set; }
     }
 }

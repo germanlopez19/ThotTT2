@@ -13,10 +13,10 @@
  * (1) http://ckeditor.com/builder
  *     Visit online builder to build CKEditor from scratch.
  *
- * (2) http://ckeditor.com/builder/4cbd8018ffb74ad3a58a0fb183b028b0
+ * (2) http://ckeditor.com/builder/6351e87eef069ebcf1dfd68295bcb5ba
  *     Visit online builder to build CKEditor, starting with the same setup as before.
  *
- * (3) http://ckeditor.com/builder/download/4cbd8018ffb74ad3a58a0fb183b028b0
+ * (3) http://ckeditor.com/builder/download/6351e87eef069ebcf1dfd68295bcb5ba
  *     Straight download link to the latest version of CKEditor (Optimized) with the same setup as before.
  *
  * NOTE:
@@ -25,7 +25,7 @@
  */
 
 var CKBUILDER_CONFIG = {
-	skin: 'office2013',
+	skin: 'minimalist',
 	preset: 'full',
 	ignore: [
 		'.bender',
@@ -83,7 +83,6 @@ var CKBUILDER_CONFIG = {
 		'list' : 1,
 		'liststyle' : 1,
 		'magicline' : 1,
-		'mathedit' : 1,
 		'mathjax' : 1,
 		'maximize' : 1,
 		'newpage' : 1,
@@ -109,8 +108,10 @@ var CKBUILDER_CONFIG = {
 		'templates' : 1,
 		'toolbar' : 1,
 		'undo' : 1,
+		'videodetector' : 1,
 		'wsc' : 1,
-		'wysiwygarea' : 1
+		'wysiwygarea' : 1,
+		'youtube' : 1
 	},
 	languages : {
 		'en' : 1,

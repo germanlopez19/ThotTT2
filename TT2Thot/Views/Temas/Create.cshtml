@@ -76,8 +76,15 @@
             editor.destroy(true);
         }
         CKEDITOR.replace("Contenido", {
+
             enterMode: CKEDITOR.ENTER_BR,
+            extraPlugins: 'mathjax',
+            mathJaxLib: 'http://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS_HTML',
+            height: 320
         });
         CKFinder.setupCKEditor(null, '@Url.Content("~/Content/ckfinder")');
     </script>
+   
+
+    
 }

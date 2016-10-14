@@ -10,118 +10,107 @@ using TT2Thot.Models;
 
 namespace TT2Thot.Controllers
 {
-    public class TemasController : Controller
+    public class ApplicationUsersController : Controller
     {
         private ThotDBContext db = new ThotDBContext();
 
-        // GET: Temas
+        // GET: ApplicationUsers
         public ActionResult Index()
         {
-            var temas = db.Temas.Include(t => t.Unidad);
-            return View(temas.ToList());
+            return View(db.ApplicationUsers.ToList());
         }
 
-        // GET: Temas/Details/5
-        [AllowAnonymous]
-        public ActionResult Details(int? id)
+        // GET: ApplicationUsers/Details/5
+        public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Tema tema = db.Temas.Find(id);
-            if (tema == null)
+            ApplicationUser applicationUser = db.ApplicationUsers.Find(id);
+            if (applicationUser == null)
             {
                 return HttpNotFound();
             }
-            return View(tema);
+            return View(applicationUser);
         }
 
-        // GET: Temas/Create
-        [Authorize (Users = "german.lopez19@ymail.com")]
+        // GET: ApplicationUsers/Create
         public ActionResult Create()
         {
-            ViewBag.UnidadID = new SelectList(db.Unidads, "UnidadID", "Numero");
             return View();
         }
 
-        // POST: Temas/Create
+        // POST: ApplicationUsers/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [ValidateInput(false)]
-        public ActionResult Create([Bind(Include = "TemaID,Numero,Nombre,UnidadID,Contenido,Bibliografia")] Tema tema)
+        public ActionResult Create([Bind(Include = "Id,Nombre,ApellidoPaterno,ApellidoMaterno,NumeroBoleta,Email,EmailConfirmed,PasswordHash,SecurityStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEndDateUtc,LockoutEnabled,AccessFailedCount,UserName")] ApplicationUser applicationUser)
         {
             if (ModelState.IsValid)
             {
-                db.Temas.Add(tema);
+                db.ApplicationUsers.Add(applicationUser);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.UnidadID = new SelectList(db.Unidads, "UnidadID", "Numero", tema.UnidadID);
-            return View(tema);
+            return View(applicationUser);
         }
 
-        // GET: Temas/Edit/5
-        [Authorize(Users = "german.lopez19@ymail.com")]
-        public ActionResult Edit(int? id)
+        // GET: ApplicationUsers/Edit/5
+        public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Tema tema = db.Temas.Find(id);
-            if (tema == null)
+            ApplicationUser applicationUser = db.ApplicationUsers.Find(id);
+            if (applicationUser == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.UnidadID = new SelectList(db.Unidads, "UnidadID", "Numero", tema.UnidadID);
-            return View(tema);
+            return View(applicationUser);
         }
 
-        // POST: Temas/Edit/5
+        // POST: ApplicationUsers/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [ValidateInput(false)]
-        public ActionResult Edit([Bind(Include = "TemaID,Numero,Nombre,UnidadID,Contenido,Bibliografia")] Tema tema)
+        public ActionResult Edit([Bind(Include = "Id,Nombre,ApellidoPaterno,ApellidoMaterno,NumeroBoleta,Email,EmailConfirmed,PasswordHash,SecurityStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEndDateUtc,LockoutEnabled,AccessFailedCount,UserName")] ApplicationUser applicationUser)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(tema).State = EntityState.Modified;
+                db.Entry(applicationUser).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.UnidadID = new SelectList(db.Unidads, "UnidadID", "Numero", tema.UnidadID);
-            return View(tema);
+            return View(applicationUser);
         }
 
-        // GET: Temas/Delete/5
-        [Authorize(Users = "german.lopez19@ymail.com")]
-        public ActionResult Delete(int? id)
+        // GET: ApplicationUsers/Delete/5
+        public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Tema tema = db.Temas.Find(id);
-            if (tema == null)
+            ApplicationUser applicationUser = db.ApplicationUsers.Find(id);
+            if (applicationUser == null)
             {
                 return HttpNotFound();
             }
-            return View(tema);
+            return View(applicationUser);
         }
 
-        // POST: Temas/Delete/5
+        // POST: ApplicationUsers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(string id)
         {
-            Tema tema = db.Temas.Find(id);
-            db.Temas.Remove(tema);
+            ApplicationUser applicationUser = db.ApplicationUsers.Find(id);
+            db.ApplicationUsers.Remove(applicationUser);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
